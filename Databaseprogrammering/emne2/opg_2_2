@@ -1,0 +1,9 @@
+SELECT * FROM elev
+INNER JOIN
+	hold ON hold.hold = elev.hold
+INNER JOIN
+	person ON person.personId = elev.person
+INNER JOIN
+	kontaktinfo ON kontaktinfo.person = elev.person
+WHERE 
+	hold.holdlokale = "B109"
