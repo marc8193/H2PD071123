@@ -1,0 +1,51 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:dc="clr-namespace:produkt_redigering.Views"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="produkt_redigering.Views.ProductDetails"
+             x:DataType="dc:ProductDetails"
+             x:CompileBindings="True">
+
+  <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" >
+    <TextBlock Margin="0 0 0 40 " FontSize="48" FontWeight="Bold" Text="Product details"/>
+    <StackPanel Width="250">
+      <TextBlock Text="Name:" />
+      <TextBox Watermark="Name"/>
+      
+      <TextBlock Text="Description:" />
+      <TextBox Watermark="Description" />
+      
+      <TextBlock Text="Sales price:" />
+      <TextBox Watermark="Sales price" />
+      
+      <TextBlock Text="Purchase price:" />
+      <TextBox Watermark="Purchase price" />
+      
+      <TextBlock Text="In stock:" />
+      <NumericUpDown Watermark="In stock" Value="0" />
+
+      <TextBlock Text="Units:" />
+      <ComboBox x:Name="units" SelectedIndex="0" MaxDropDownHeight="300">
+      <ComboBox.ItemTemplate>
+      <DataTemplate>
+        <TextBlock Text="Add binding to Enum - Units" />
+      </DataTemplate>
+      </ComboBox.ItemTemplate>
+      </ComboBox>
+
+      <TextBlock Text="Hidden:" />
+      <CheckBox />
+
+      <TextBlock Text="Campaing end:" />
+      <DatePicker DayFormat="ddd dd"/>
+
+      <StackPanel Orientation="Horizontal" Margin="0 20 0 0" >
+        <Button Content="Save"   />
+        <Button Content="Cancel" />
+      </StackPanel>
+
+    </StackPanel>
+  </StackPanel>
+</UserControl>
